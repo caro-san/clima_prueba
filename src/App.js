@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import Formulario from './components/Formulario';
 import './App.css';
+import {Container} from 'react-bootstrap';
+import UseFetch from './hooks/UseFetch';
+import ClimaLista from './components/ClimaLista';
 
-function App() {
+const App = () => {
+  const {data, error, Cargando, setUrl} = UseFetch();
+
+  const getContent = () => {
+    if(error) return <h2>Error: {error}</h2>
+    if(!data && Cargando) return <h2>Loading...</h2>
+    if(!data) return null;
+    return <ClimaLista weathers={data.list} />
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="App">
+      <Formulario onSearch={(ciudad) => setUrl(`http://api.openweathermap.org//data/2.5/forecast?q=${ciudad}&cnt=40&appid=af30ad5d737fa343f42cb8cba9ab4690&units=metric&lang=es`)} />
+
+      {/* conditionally render  */}
+      {getContent()}
+    </Container>
   );
-}
+};
 
 export default App;
