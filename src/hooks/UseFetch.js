@@ -17,7 +17,9 @@ const UseFetch = (initialUrl) => {
     fetch(url)
         .then((response) => response.json())
         .then((data) => {
-
+            //console.log("Data list Loaded", data.list)
+            //const dailyData = data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
+            //console.log(dailyData);
             setCargando(false);
             if(data.cod >= 400) {
                 setError("Ciudad no encontrada");
@@ -31,7 +33,7 @@ const UseFetch = (initialUrl) => {
         });
 }, [url]);
 
-    return { data, error, cargando, setUrl };
+    return { data, error, cargando, setUrl, };
 };
 
 export default UseFetch;

@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import {Row, Col, FormControl, Button} from 'react-bootstrap';
 
 const Formulario = ({onSearch}) => {
-    const [ciudad, setCiudad] = useState('');
+    const [ciudad, setCiudad] = useState('Buenos Aires');
 
     return (
       <>
         <Row>
           <Col>
-            <h1>Busca tu ciudad</h1>
+            <h1>Search your city</h1>
           </Col>
         </Row>
   
@@ -24,7 +24,7 @@ const Formulario = ({onSearch}) => {
   
         <Row>
           <Col>
-            <Button onClick={() => onSearch(ciudad)}>Buscar</Button>
+            <Button onClick={() => onSearch(ciudad)}>Search</Button>
           </Col>
         </Row>
       </>

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClimaCard should render 1`] = `
+<div>
+  <div
+    class="mb-2 card"
+    style="background-image: url(9846.jpg);"
+  >
+    <div
+      class="card-body"
+    >
+      <p
+        style="font-size: 3rem;"
+      >
+        21
+        ºC
+      </p>
+      <div
+        class="mb-1 text-muted card-subtitle h6"
+      >
+        Invalid date
+      </div>
+    </div>
+    <img
+      class="card-img-top"
+      src="http://openweathermap.org/img/wn/01d@2x.png"
+    />
+    <div
+      class="card-body"
+    >
+      <div
+        class="card-title h5"
+      >
+        Clear
+      </div>
+      <p>
+        Invalid date
+      </p>
+      <p>
+        Min: 
+        20
+        ºC
+      </p>
+      <p>
+        Max: 
+        22
+        ºC
+      </p>
+    </div>
+  </div>
+</div>
+`;

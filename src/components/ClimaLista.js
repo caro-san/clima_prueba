@@ -9,9 +9,9 @@ const ClimaLista = ({weathers}) => {
             {weathers.map(({dt,main, weather}) => (
                 <Col key={dt}>
                     <ClimaCard
-                    temp_main={main.temp}
-                    temp_max={main.temp_max} 
-                    temp_min={main.temp_min} 
+                    temp_main={Math.round(main.temp)}
+                    temp_max={Math.round(main.temp_max)} 
+                    temp_min={Math.round(main.temp_min)} 
                     dt={dt * 1000} 
                     main={weather[0].main} 
                     icon={weather[0].icon}/>
